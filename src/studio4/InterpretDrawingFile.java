@@ -20,5 +20,37 @@ public class InterpretDrawingFile {
 		File f = new File(chooser.getSelectedFile().getPath());
 		Scanner in = new Scanner(f); //making Scanner with a File
 		
+//		System.out.print(in.next());
+		
+//		rectangle 255 109 182 true 0.5 0.5 0.2 0.2
+		String shape=in.next();
+		int r=in.nextInt();
+		int g=in.nextInt();
+		int b=in.nextInt();
+		boolean filled=in.nextBoolean();
+		double x=in.nextDouble();
+		double y=in.nextDouble();
+		double halfW=in.nextDouble();
+		double halfH=in.nextDouble();
+		StdDraw.setPenColor(r, g, b);
+		if (shape== "rectangle" ) {
+			if (filled==true) {
+				StdDraw.filledRectangle(x, y, halfW, halfH);
+			}else {
+				StdDraw.rectangle(x, y, halfW, halfH);
+			}
+		}
+//		else if (shape.equals("ellipse")){
+//			if (filled==true) {
+//				StdDraw.filledEllipse(x, y, halfW, halfH);
+//			}else {
+//				StdDraw.ellipse(x, y, halfW, halfH);
+//			}
+//		}
+//		StdDraw.ellipse(x, y, halfW, halfH);
+//		System.out.print(r);
+		
+
+		
 	}
 }
